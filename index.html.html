@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ismaila Abdulrazaq — Registered Nurse & Tech Professional</title>
+<meta name="description" content="Portfolio of Ismaila Abdulrazaq — Registered Nurse, Web Developer & Aspiring Tech Professional from Kogi State, Nigeria."/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+/* ========== TOKENS ========== */
+:root {
+  --bg:       #080c14;
+  --bg2:      #0d1220;
+  --bg3:      #131928;
+  --card:     #111827;
+  --border:   rgba(255,255,255,0.07);
+  --border2:  rgba(255,255,255,0.13);
+  --txt:      #eef0f6;
+  --txt2:     #7a8aaa;
+  --txt3:     #3a4a6a;
+  --teal:     #00c8b0;
+  --teal2:    #00e5cc;
+  --navy:     #1a3a5c;
+  --blue:     #2563eb;
+  --gold:     #f5c842;
+  --red:      #ff5a5a;
+  --grad:     linear-gradient(135deg,#00c8b0,#2563eb);
+  --grad2:    linear-gradient(135deg,#2563eb,#00c8b0);
+  --shadow:   0 16px 64px rgba(0,200,176,0.14);
+  --r:        12px;
+  --r2:       20px;
+  --t:        all .28s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="light"] {
+  --bg:#f5f7fc; --bg2:#ffffff; --bg3:#edf0f8; --card:#ffffff;
+  --border:rgba(0,0,0,0.07); --border2:rgba(0,0,0,0.12);
+  --txt:#0a0f1e; --txt2:#4a5a7a; --txt3:#a0aabf;
+  --shadow:0 16px 64px rgba(0,200,176,0.10);
+}
+
+/* ========== RESET ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;overflow-x:hidden;transition:background .3s,color .3s}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;outline:none;font-family:inherit}
+input,textarea,select{font-family:inherit;outline:none;border:none}
+ul{list-style:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px}
+
+/* ========== UTILS ========== */
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.section{padding:88px 0}
+.section-alt{background:var(--bg2)}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:12px}
+.sh h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:14px}
+.sh p{color:var(--txt2);max-width:520px;font-size:1rem}
+.sh.center{text-align:center}.sh.center p{margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-weight:600;font-size:.9rem;cursor:pointer;transition:var(--t);line-height:1}
+.btn-primary{background:var(--teal);color:#080c14}
+.btn-primary:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,200,176,.35)}
+.btn-outline{background:transparent;border:1.5px solid var(--teal);color:var(--teal)}
+.btn-outline:hover{background:var(--teal);color:#080c14}
+.btn-ghost{background:var(--bg3);border:1.5px solid var(--border2);color:var(--txt2)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.btn-sm{padding:9px 18px;font-size:.82rem}
+.tag{display:inline-block;background:rgba(0,200,176,.1);border:1px solid rgba(0,200,176,.2);color:var(--teal);border-radius:50px;padding:4px 14px;font-size:.75rem;font-weight:600}
+
+/* ========== REVEAL ========== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.in{opacity:1;transform:none}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+
+/* ========== NAV ========== */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 0;transition:var(--t)}
+#nav.sticky{background:rgba(8,12,20,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 0}
+[data-theme="light"] #nav.sticky{background:rgba(245,247,252,.94)}
+.nav-inner{display:flex;align-items:center;gap:16px}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;cursor:pointer}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{padding:7px 14px;border-radius:8px;font-size:.88rem;color:var(--txt2);transition:var(--t)}
+.nav-links a:hover,.nav-links a.on{color:var(--teal)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-icon{width:38px;height:38px;border-radius:10px;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--txt2);cursor:pointer;transition:var(--t);font-size:.9rem}
+.nav-icon:hover{background:var(--teal);color:#080c14}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.ham span{width:20px;height:2px;background:var(--txt);border-radius:2px;transition:var(--t)}
+
+/* ========== MOBILE MENU ========== */
+#mmenu{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:var(--bg2);z-index:1000;transition:right .3s;border-left:1px solid var(--border);padding:70px 20px 24px;display:flex;flex-direction:column;gap:6px}
+#mmenu.open{right:0}
+#mmenu a{padding:12px 16px;border-radius:10px;color:var(--txt2);font-size:.92rem;transition:var(--t)}
+#mmenu a:hover{background:var(--bg3);color:var(--teal)}
+#mov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
+#mov.open{opacity:1;pointer-events:all}
+.mm-x{position:absolute;top:16px;right:16px;width:34px;height:34px;background:var(--bg3);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+
+/* ========== HERO ========== */
+#hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+.hero-bg-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb1{width:500px;height:500px;background:rgba(0,200,176,.08);top:-80px;right:-100px}
+.orb2{width:400px;height:400px;background:rgba(37,99,235,.07);bottom:-60px;left:-80px}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,176,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,176,.025) 1px,transparent 1px);background-size:48px 48px}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero-text .eyebrow{margin-bottom:16px}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:18px}
+.hero-h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{color:var(--txt2);font-size:1.05rem;max-width:460px;margin-bottom:32px;line-height:1.75}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stats{display:flex;gap:28px;padding-top:32px;border-top:1px solid var(--border)}
+.hs strong{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;display:block;color:var(--teal)}
+.hs span{font-size:.78rem;color:var(--txt2)}
+.hero-img-wrap{position:relative;display:flex;justify-content:center}
+/* ---- PHOTO FRAME ---- */
+.photo-frame{position:relative;width:360px;height:420px}
+.photo-frame-ring{position:absolute;inset:-12px;border:2px solid rgba(0,200,176,.2);border-radius:36px;animation:rotring 12s linear infinite}
+@keyframes rotring{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.photo-frame-img{width:100%;height:100%;border-radius:28px;object-fit:cover;object-position:top;border:3px solid rgba(0,200,176,.25);position:relative;z-index:1}
+.photo-placeholder{width:100%;height:100%;border-radius:28px;background:linear-gradient(135deg,var(--bg3),var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:3px dashed rgba(0,200,176,.3);position:relative;z-index:1;text-align:center;padding:24px}
+.photo-placeholder i{font-size:3rem;color:var(--teal);opacity:.6}
+.photo-placeholder p{color:var(--txt2);font-size:.82rem;line-height:1.5}
+.photo-placeholder code{font-size:.7rem;color:var(--teal);background:rgba(0,200,176,.08);padding:2px 8px;border-radius:4px}
+.hero-badge{position:absolute;background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:11px 15px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);animation:fl 3s ease-in-out infinite;z-index:2}
+.hero-badge:nth-of-type(2){bottom:-10px;left:-30px;animation-delay:0s}
+.hero-badge:nth-of-type(3){top:20px;right:-30px;animation-delay:1.5s}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hb-ico{font-size:1.4rem;width:32px;text-align:center}
+.hb-text strong{display:block;font-size:.82rem;line-height:1.2}
+.hb-text small{font-size:.7rem;color:var(--txt2)}
+/* Scroll hint */
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--txt2);font-size:.75rem;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ========== ABOUT ========== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;max-width:420px;border-radius:24px;object-fit:cover;border:2px solid rgba(0,200,176,.2)}
+.about-placeholder{width:100%;max-width:420px;aspect-ratio:4/5;border-radius:24px;background:linear-gradient(135deg,var(--bg3),var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(0,200,176,.25);padding:30px;text-align:center}
+.about-placeholder i{font-size:3.5rem;color:var(--teal);opacity:.5}
+.about-accent{position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;background:linear-gradient(135deg,rgba(0,200,176,.15),rgba(37,99,235,.1));border-radius:50%;blur:40px}
+.about-chips{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:50px;padding:6px 14px;font-size:.8rem;color:var(--txt2)}
+.chip i{color:var(--teal)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.info-item{background:var(--bg3);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:3px}
+.info-item label{font-size:.7rem;color:var(--txt2);text-transform:uppercase;letter-spacing:1px}
+.info-item strong{font-size:.9rem;font-weight:600}
+
+/* ========== INSPIRATION ========== */
+.inspiration-card{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:28px;padding:48px;position:relative;overflow:hidden}
+.inspiration-card::before{content:'';position:absolute;top:0;right:0;width:260px;height:260px;background:radial-gradient(circle,rgba(0,200,176,.06),transparent 70%)}
+.insp-img{width:280px;height:340px;border-radius:20px;object-fit:cover;border:2px solid rgba(0,200,176,.2)}
+.insp-placeholder{width:280px;height:340px;border-radius:20px;background:linear-gradient(135deg,var(--bg3),var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(0,200,176,.25);text-align:center;padding:24px;flex-shrink:0}
+.insp-placeholder i{font-size:3rem;color:var(--teal);opacity:.5}
+.quote-mark{font-family:'Fraunces',serif;font-size:5rem;color:var(--teal);line-height:.8;opacity:.3;margin-bottom:8px}
+.insp-text{font-style:italic;font-size:1.05rem;color:var(--txt2);line-height:1.8;margin-bottom:20px}
+.insp-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;margin-bottom:4px}
+.insp-role{font-size:.82rem;color:var(--teal)}
+
+/* ========== NETWORK ========== */
+.network-card{display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center;background:linear-gradient(135deg,rgba(37,99,235,.05),rgba(0,200,176,.05));border:1px solid var(--border);border-radius:28px;padding:48px;position:relative;overflow:hidden}
+
+/* ========== SKILLS ========== */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px;transition:var(--t)}
+.skill-card h3{font-family:'Fraunces',serif;font-weight:700;margin-bottom:20px;font-size:1.1rem;display:flex;align-items:center;gap:10px}
+/* Crypto Trader feature card */
+.crypto-card{grid-column:1 / -1;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;background:linear-gradient(135deg,rgba(0,200,176,.07),rgba(37,99,235,.05));border:1px solid var(--border);border-radius:var(--r2);padding:36px;position:relative;overflow:hidden;transition:var(--t)}
+.crypto-card:hover{border-color:rgba(0,200,176,.3);box-shadow:var(--shadow);transform:translateY(-4px)}
+.crypto-card::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(0,200,176,.12),transparent 70%);animation:cryptoPulse 6s ease-in-out infinite}
+@keyframes cryptoPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.25);opacity:1}}
+.crypto-icon-wrap{width:64px;height:64px;border-radius:18px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#080c14;margin-bottom:18px;box-shadow:0 10px 30px rgba(0,200,176,.3);animation:cryptoFloat 4s ease-in-out infinite}
+@keyframes cryptoFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(4deg)}}
+.crypto-card h3{font-family:'Fraunces',serif;font-weight:800;font-size:1.4rem;margin-bottom:10px}
+.crypto-card p{color:var(--txt2);font-size:.92rem;line-height:1.75;margin-bottom:18px}
+.crypto-tags{display:flex;gap:8px;flex-wrap:wrap}
+.crypto-chart{position:relative;height:160px;display:flex;align-items:flex-end;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:18px;overflow:hidden}
+.crypto-chart::after{content:'';position:absolute;left:18px;right:18px;top:50%;height:1px;background:rgba(0,200,176,.15)}
+.crypto-bar{flex:1;background:var(--grad);border-radius:4px 4px 0 0;animation:cryptoGrow 1.4s cubic-bezier(.4,0,.2,1) both;transform-origin:bottom}
+@keyframes cryptoGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.crypto-bar:nth-child(odd){background:var(--grad2)}
+@media(max-width:780px){.crypto-card{grid-template-columns:1fr}.crypto-chart{order:-1;height:120px}}
+.skill-bar-wrap{margin-bottom:16px}
+.skill-label{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:6px;color:var(--txt2)}
+.skill-label strong{color:var(--txt);font-weight:600}
+.skill-track{height:7px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.skill-fill{height:100%;background:var(--grad);border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* ========== ACHIEVEMENTS ========== */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--teal),var(--blue))}
+.tl-item{position:relative;padding-bottom:36px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-32px;top:4px;width:22px;height:22px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#080c14;font-weight:800;flex-shrink:0}
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:22px;transition:var(--t)}
+.tl-card:hover{border-color:rgba(0,200,176,.25);transform:translateX(6px)}
+.tl-card h4{font-weight:700;margin-bottom:5px;font-size:.95rem}
+.tl-card p{color:var(--txt2);font-size:.85rem;line-height:1.6}
+.tl-year{display:inline-block;background:rgba(0,200,176,.1);color:var(--teal);border-radius:20px;padding:2px 10px;font-size:.72rem;font-weight:700;margin-bottom:8px}
+
+/* ========== PROJECTS ========== */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:var(--t)}
+.proj-card:hover{transform:translateY(-5px);border-color:rgba(0,200,176,.2);box-shadow:var(--shadow)}
+.proj-img{height:180px;background:linear-gradient(135deg,var(--bg3),var(--navy));display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
+.proj-img img{width:100%;height:100%;object-fit:cover}
+.proj-img-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0;transition:var(--t)}
+.proj-card:hover .proj-img-overlay{opacity:1}
+.proj-body{padding:20px}
+.proj-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.proj-tag{background:var(--bg3);border-radius:6px;padding:2px 8px;font-size:.7rem;color:var(--txt2)}
+.proj-name{font-weight:700;margin-bottom:6px;font-size:.95rem}
+.proj-desc{color:var(--txt2);font-size:.83rem;line-height:1.6;margin-bottom:14px}
+.proj-links{display:flex;gap:8px}
+
+/* ========== GALLERY ========== */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{border-radius:var(--r2);overflow:hidden;aspect-ratio:1;cursor:pointer;position:relative;transition:var(--t)}
+.gallery-item:hover{transform:scale(1.02)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--bg3),var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--border2);font-size:.78rem;color:var(--txt2);text-align:center;padding:16px}
+.gallery-placeholder i{font-size:2rem;color:var(--teal);opacity:.5}
+.gallery-add{background:transparent;border:2px dashed rgba(0,200,176,.3);border-radius:var(--r2);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:.82rem;color:var(--teal);cursor:pointer;transition:var(--t)}
+.gallery-add:hover{border-color:var(--teal);background:rgba(0,200,176,.05)}
+
+/* ========== CONTACT ========== */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.ci-item{display:flex;align-items:center;gap:16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);transition:var(--t)}
+.ci-item:hover{border-color:rgba(0,200,176,.2)}
+.ci-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ci-ico.teal{background:rgba(0,200,176,.12);color:var(--teal)}
+.ci-ico.blue{background:rgba(37,99,235,.12);color:#60a5fa}
+.ci-ico.green{background:rgba(16,185,129,.12);color:#34d399}
+.ci-ico.pink{background:rgba(236,72,153,.12);color:#f472b6}
+.ci-ico.orange{background:rgba(245,158,11,.12);color:var(--gold)}
+.ci-label{font-size:.72rem;color:var(--txt2);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.ci-val{font-weight:600;font-size:.92rem}
+.ci-val a{color:var(--txt);transition:var(--t)}
+.ci-val a:hover{color:var(--teal)}
+.social-row{display:flex;gap:10px;margin-top:8px}
+.soc-btn{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:var(--t);text-decoration:none}
+.soc-fb{background:rgba(24,119,242,.12);color:#60a5fa}
+.soc-fb:hover{background:#1877f2;color:#fff}
+.soc-ig{background:rgba(225,48,108,.12);color:#f472b6}
+.soc-ig:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.soc-wa{background:rgba(37,211,102,.12);color:#34d399}
+.soc-wa:hover{background:#25d366;color:#fff}
+.soc-li{background:rgba(0,119,181,.12);color:#60a5fa}
+.soc-li:hover{background:#0077b5;color:#fff}
+.soc-gh{background:var(--bg3);color:var(--txt2)}
+.soc-gh:hover{background:#333;color:#fff}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:32px}
+.contact-form h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.2rem;margin-bottom:22px}
+.cf-group{margin-bottom:16px}
+.cf-group label{display:block;font-size:.8rem;font-weight:600;color:var(--txt2);margin-bottom:6px}
+.cf-group input,.cf-group textarea,.cf-group select{width:100%;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--r);padding:12px 16px;color:var(--txt);font-size:.9rem;transition:var(--t)}
+.cf-group input:focus,.cf-group textarea:focus{border-color:var(--teal)}
+.cf-group textarea{resize:vertical;min-height:110px}
+
+/* ========== FOOTER ========== */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 0 24px}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer-brand p{color:var(--txt2);font-size:.85rem;line-height:1.75;margin:10px 0 18px}
+.footer-col h4{font-weight:700;font-size:.88rem;margin-bottom:14px}
+.footer-col a{display:block;color:var(--txt2);font-size:.83rem;margin-bottom:9px;transition:var(--t)}
+.footer-col a:hover{color:var(--teal)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--txt3)}
+.made-with{color:var(--txt2);font-size:.78rem}
+
+/* ========== TOAST ========== */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(50px);background:var(--teal);color:#080c14;font-weight:700;padding:12px 24px;border-radius:50px;z-index:9999;opacity:0;transition:var(--t);font-size:.88rem;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-img-wrap{justify-content:flex-start}
+  .photo-frame{width:280px;height:340px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .skills-grid{grid-template-columns:1fr}
+  .inspiration-card,.network-card{grid-template-columns:1fr;gap:28px}
+  .insp-img,.insp-placeholder{width:100%;height:260px}
+  .network-card{grid-template-rows:auto auto}
+  .contact-wrap{grid-template-columns:1fr;gap:32px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .nav-links{display:none}.ham{display:flex}
+  .section{padding:64px 0}
+  .info-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .hero-stats{gap:18px}
+  .hero-badge:nth-of-type(2){left:-10px}
+  .hero-badge:nth-of-type(3){right:-10px}
+}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- ====== NAV ====== -->
+<nav id="nav">
+<div class="container"><div class="nav-inner">
+  <div class="nav-logo" onclick="scrollTo(0,0)">Ismaila<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-icon" onclick="toggleTheme()" title="Toggle theme"><i class="fa fa-moon" id="theme-ico"></i></div>
+    <a href="#contact" class="btn btn-primary btn-sm" style="margin-left:4px">Hire Me</a>
+    <div class="ham" onclick="openMenu()"><span></span><span></span><span></span></div>
+  </div>
+</div></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mov" onclick="closeMenu()"></div>
+<div id="mmenu">
+  <div class="mm-x" onclick="closeMenu()"><i class="fa fa-times"></i></div>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#achievements" onclick="closeMenu()">Achievements</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ====== HERO ====== -->
+<section id="hero">
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow reveal">Registered Nurse · Web Developer · Tech Enthusiast .Crypto trader</span>
+        <h1 class="hero-h1 reveal delay-1">
+          Hi, I'm <em>Ismaila</em><br>
+          Abdulrazaq
+        </h1>
+        <p class="hero-sub reveal delay-2">
+          A Registered Nurse and aspiring tech professional passionate about healthcare innovation, digital solutions, and making a meaningful impact in society.
+        </p>
+        <div class="hero-ctas reveal delay-3">
+          <a href="#projects" class="btn btn-primary"><i class="fa fa-folder-open"></i> View Projects</a>
+          <!-- ✏️ EDIT: Replace "your-cv.pdf" with your actual CV filename -->
+          <a href="Abdulrazaq CV.pdf" download class="btn btn-outline"><i class="fa fa-download"></i> Download CV</a>
+          <a href="#contact" class="btn btn-ghost"><i class="fa fa-envelope"></i> Contact Me</a>
+        </div>
+        <div class="hero-stats reveal delay-4">
+          <div class="hs"><strong>2+</strong><span>Years Nursing</span></div>
+          <div class="hs"><strong>5+</strong><span>Web Projects</span></div>
+          <div class="hs"><strong>21</strong><span>Years Young</span></div>
+          <div class="hs"><strong>100%</strong><span>Dedicated</span></div>
+        </div>
+      </div>
+
+      <div class="hero-img-wrap reveal-right">
+        <div class="photo-frame">
+          <div class="photo-frame-ring"></div>
+          <!--
+            ✏️ HOW TO ADD YOUR PHOTO:
+            1. Save your photo (in medical scrubs) as "profile.jpg" in the same folder as this file
+            2. Replace the div below with: <img class="photo-frame-img" src="profile.jpg" alt="Ismaila Abdulrazaq"/>
+          -->
+            <img class="photo-frame-img" src="profile image 2.jpg" alt="Ismaila abdulrazaq" >  
+          <div class="hero-badge">
+            <span class="hb-ico">🏥</span>
+            <div class="hb-text"><strong>Registered Nurse</strong><small>Healthcare Professional</small></div>
+          </div>
+          <div class="hero-badge">
+            <span class="hb-ico">💻</span>
+            <div class="hb-text"><strong>Web Developer</strong><small>Building Digital Solutions</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <i class="fa fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="about" class="section section-alt">
+<div class="container">
+  <div class="about-grid">
+    <div class="reveal-left">
+      <div class="about-img-wrap">
+        <!--
+          ✏️ Add your photo: <img class="about-img" src="about-photo.jpg" alt="Ismaila"/>
+      -->
+          <img class="about-img" src="about 2.png" alt="Ismaila">
+        <div class="about-accent"></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sh">
+        <span class="eyebrow">About Me</span>
+        <h2>A Nurse with a Passion for Technology</h2>
+        <p>I'm a 21-year-old Registered Nurse from Kogi State, Nigeria — a graduate who believes that healthcare and technology are two of the most powerful forces for positive change in the world.</p>
+      </div>
+      <p style="color:var(--txt2);margin-top:16px;line-height:1.8;font-size:.95rem">
+        Growing up in Kogi State, I developed a deep sense of purpose and compassion early on. My education at Sanate Secondary School gave me the discipline and hunger for growth that continues to drive me today. I pursued nursing not just as a career, but as a calling — a commitment to serve, to heal, and to make lives better.
+      </p>
+      <p style="color:var(--txt2);margin-top:12px;line-height:1.8;font-size:.95rem">
+        Beyond healthcare, I've discovered a powerful love for technology and web development. I believe the future of healthcare lies at the intersection of compassion and innovation, and I'm actively building the skills to stand at that intersection. When I'm not studying or coding, you'll find me on the football pitch — where teamwork, strategy, and resilience are just as important as they are in any hospital ward.
+      </p>
+      <p style="color:var(--txt2);margin-top:12px;line-height:1.8;font-size:.95rem">
+        Beyond healthcare and technology, I am also passionate about cryptocurrency trading and financial markets. As a crypto trader, I continuously study market trends, risk management, and digital assets while exploring opportunities in the evolving world of blockchain and finance. My entrepreneurial mindset drives me to keep learning, adapting, and building new opportunities.
+      </p>
+      <div class="about-chips">
+        <span class="chip"><i class="fa fa-heartbeat"></i> Registered Nurse</span>
+        <span class="chip"><i class="fa fa-code"></i> Web Developer</span>
+        <span class="chip"><i class="fa fa-chart-line"></i> Crypto Trader</span>
+        <span class="chip"><i class="fa fa-lightbulb"></i> Entrepreneur</span>
+        <span class="chip"><i class="fa fa-futbol"></i> Footballer</span>
+        <span class="chip"><i class="fa fa-graduation-cap"></i> Lifelong Learner</span>
+        <span class="chip"><i class="fa fa-map-marker-alt"></i> Kogi State, Nigeria</span>
+      </div>
+      <div class="info-grid">
+        <div class="info-item"><label>Age</label><strong>21 Years</strong></div>
+        <div class="info-item"><label>Origin</label><strong>Kogi State, Nigeria</strong></div>
+        <div class="info-item"><label>Education</label><strong>Sanate Secondary School</strong></div>
+        <div class="info-item"><label>Profession</label><strong>Registered Nurse</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== INSPIRATION ====== -->
+<section class="section" id="inspiration">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:40px">
+    <span class="eyebrow">Inspiration & Mentorship</span>
+    <h2>The People Who Shape My Journey</h2>
+    <p>Success is rarely a solo journey. These are the individuals whose dedication and achievements fuel my ambition every day.</p>
+  </div>
+  <div class="inspiration-card reveal">
+    <!--
+      ✏️ Add your brother's photo: <img class="insp-img" src="brother.jpg" alt="Brother"/>
+    -->
+      <i class="fa fa-user-graduate"></i>
+      ,<img  class="insp-img" src="brother image.jpg" alt="Brother">
+    <div>
+      <div class="quote-mark">"</div>
+      <p class="insp-text">
+        My journey has been profoundly shaped by those closest to me who demonstrate, through action, what is possible when you combine intellect with relentless dedication. My brother — a PhD holder in Computer Science and Data Analytics — is a living testament to the heights one can reach through education, discipline, and a deep love for one's craft. Watching him navigate the world of technology and academia has been one of the greatest motivations of my life.
+      </p>
+      <div class="insp-name">My Brother — The Trailblazer</div>
+      <div class="insp-role">PhD in Computer Science</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== NETWORK ====== -->
+<section class="section section-alt" id="network">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:40px">
+    <span class="eyebrow">Professional Network</span>
+    <h2>People I Grow With</h2>
+    <p>Surrounding yourself with talented, ambitious people is one of the best decisions you can make.</p>
+  </div>
+  <div class="network-card reveal">
+    <div>
+      <div class="quote-mark">"</div>
+      <p class="insp-text">
+        Innovation rarely happens in isolation. I am fortunate to be surrounded by driven, talented individuals who push me to think bigger and work harder. Among them is a brilliant young web developer — creative, technically sharp, and constantly evolving — whose work in the digital space inspires me to deepen my own skills and explore what's possible at the intersection of design, code, and purpose.
+      </p>
+      <div class="insp-name">My Network — The Builders</div>
+      <div class="insp-role">Web Developers · Tech Creatives · Future Leaders</div>
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+        <span class="tag">💡 Innovation</span>
+        <span class="tag">🌐 Web Development</span>
+        <span class="tag">🤝 Collaboration</span>
+        <span class="tag">🚀 Growth Mindset</span>
+      </div>
+    </div>
+    <!--
+      ✏️ Add your friend's photo: <img class="insp-img" src="friend.jpg" alt="Friend"/>
+    -->
+    <div>
+      <i class="fa fa-users"></i>
+      <img class="insp-img" src="friend.jpg" alt="friend ">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== SKILLS ====== -->
+<section id="skills" class="section">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:48px">
+    <span class="eyebrow">Skills & Expertise</span>
+    <h2>What I Bring to the Table</h2>
+    <p>A unique blend of clinical expertise and digital skills developed through dedication and continuous learning.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <h3><span style="font-size:1.3rem">🏥</span> Healthcare Skills</h3>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Nursing & Patient Care</strong><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Clinical Assessment</strong><span>90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Emergency Response</strong><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Medical Documentation</strong><span>88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
+    </div>
+    <div class="skill-card reveal delay-1">
+      <h3><span style="font-size:1.3rem">💻</span> Technology Skills</h3>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Website Development</strong><span>80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>HTML / CSS / JavaScript</strong><span>75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>UI Design Principles</strong><span>80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Problem Solving</strong><span>88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
+    </div>
+    <div class="skill-card reveal delay-2">
+      <h3><span style="font-size:1.3rem">🤝</span> Soft Skills</h3>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Communication</strong><span>92%</span></div><div class="skill-track"><div class="skill-fill" data-w="92"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Teamwork</strong><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Leadership</strong><span>82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Adaptability</strong><span>90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+    </div>
+    <div class="skill-card reveal delay-3">
+      <h3><span style="font-size:1.3rem">📈</span> Personal Growth</h3>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Continuous Learning</strong><span>98%</span></div><div class="skill-track"><div class="skill-fill" data-w="98"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Time Management</strong><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Goal Setting</strong><span>88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
+      <div class="skill-bar-wrap"><div class="skill-label"><strong>Resilience</strong><span>93%</span></div><div class="skill-track"><div class="skill-fill" data-w="93"></div></div></div>
+    </div>
+
+    <!-- ====== CRYPTO TRADER FEATURE CARD ====== -->
+    <div class="crypto-card reveal">
+      <div>
+        <div class="crypto-icon-wrap"><i class="fa fa-chart-line"></i></div>
+        <h3>Crypto Trader &amp; Entrepreneur</h3>
+        <p>
+          A self-taught crypto trader with a growing focus on market structure, risk management, and digital asset analysis. I actively study price action and trends across the blockchain and finance space — applying the same discipline, patience, and continuous-learning mindset that define my work in healthcare and tech to navigate the evolving world of decentralized finance.
+        </p>
+        <div class="skill-bar-wrap"><div class="skill-label"><strong>Cryptocurrency Trading</strong><span>78%</span></div><div class="skill-track"><div class="skill-fill" data-w="78"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-label"><strong>Market Analysis</strong><span>75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-label"><strong>Risk Management</strong><span>80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-label"><strong>Technical Analysis</strong><span>76%</span></div><div class="skill-track"><div class="skill-fill" data-w="76"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-label"><strong>Entrepreneurship</strong><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
+        <div class="crypto-tags" style="margin-top:14px">
+          <span class="tag">₿ Crypto Trading</span>
+          <span class="tag">📊 Market Analysis</span>
+          <span class="tag">🛡️ Risk Management</span>
+          <span class="tag">🚀 Entrepreneurship</span>
+        </div>
+      </div>
+      <div class="crypto-chart">
+        <div class="crypto-bar" style="height:42%;animation-delay:.05s"></div>
+        <div class="crypto-bar" style="height:65%;animation-delay:.1s"></div>
+        <div class="crypto-bar" style="height:38%;animation-delay:.15s"></div>
+        <div class="crypto-bar" style="height:80%;animation-delay:.2s"></div>
+        <div class="crypto-bar" style="height:55%;animation-delay:.25s"></div>
+        <div class="crypto-bar" style="height:92%;animation-delay:.3s"></div>
+        <div class="crypto-bar" style="height:70%;animation-delay:.35s"></div>
+        <div class="crypto-bar" style="height:48%;animation-delay:.4s"></div>
+        <div class="crypto-bar" style="height:85%;animation-delay:.45s"></div>
+        <div class="crypto-bar" style="height:60%;animation-delay:.5s"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== ACHIEVEMENTS ====== -->
+<section id="achievements" class="section section-alt">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:48px">
+    <span class="eyebrow">Achievements & Milestones</span>
+    <h2>How Far I've Come</h2>
+    <p>Every step forward is a victory. Here are the milestones that define my journey so far.</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"><i class="fa fa-check"></i></div>
+        <div class="tl-card">
+          <div class="tl-year">2024 – Present</div>
+          <h4>🩺 Registered Nurse — Licensed Healthcare Professional</h4>
+          <p>Successfully completed nursing school and obtained my registration as a professional nurse. Now equipped to save lives, care for patients, and contribute meaningfully to Nigeria's healthcare system.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal delay-1">
+        <div class="tl-dot"><i class="fa fa-check"></i></div>
+        <div class="tl-card">
+          <div class="tl-year">2024 – Present</div>
+          <h4>💻 Professional Website Development</h4>
+          <p>Taught myself web development and successfully built multiple professional, fully functional websites — including e-commerce platforms and personal portfolios. Proving that a healthcare professional can thrive in tech.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal delay-2">
+        <div class="tl-dot"><i class="fa fa-check"></i></div>
+        <div class="tl-card">
+          <div class="tl-year">Ongoing</div>
+          <h4>📚 Continuous Skill Development</h4>
+          <p>Committed to lifelong learning across healthcare, technology, and entrepreneurship. Currently expanding expertise in UI/UX design, JavaScript, and healthcare technology solutions.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal delay-3">
+        <div class="tl-dot"><i class="fa fa-check"></i></div>
+        <div class="tl-card">
+          <div class="tl-year">Ongoing</div>
+          <h4>📊 Crypto Trading &amp; Entrepreneurship</h4>
+          <p>Building practical knowledge in cryptocurrency trading, market analysis, and risk management while developing an entrepreneurial mindset — exploring new opportunities across blockchain, finance, and online business.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal delay-3">
+        <div class="tl-dot"><i class="fa fa-check"></i></div>
+        <div class="tl-card">
+          <div class="tl-year">Foundation</div>
+          <h4>🎓 Standard Secondary School Graduate</h4>
+          <p>Built my academic foundation and developed the discipline, curiosity, and work ethic that continue to guide every chapter of my professional journey.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal delay-4">
+        <div class="tl-dot"><i class="fa fa-check"></i></div>
+        <div class="tl-card">
+          <div class="tl-year">Always</div>
+          <h4>⚽ Football — Teamwork in Action</h4>
+          <p>Football is more than a sport — it's a classroom for strategy, resilience, communication, and performing under pressure. Skills I carry into every professional endeavour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== PROJECTS ====== -->
+<section id="projects" class="section">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:40px">
+    <span class="eyebrow">Projects</span>
+    <h2>Things I've Built</h2>
+    <p>A growing portfolio of real-world projects a/t the intersection of healthcare, technology, and creativity.</p>
+  </div>
+  <div class="projects-grid">
+    <!-- PROJECT 1 -->
+    <div class="proj-card reveal">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0d1a2e,#0a2540)">
+        <span>📱</span>
+        <div class="proj-img-overlay"><i class="fa fa-external-link-alt" style="color:#fff;font-size:1.5rem"></i></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">HTML/CSS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">E-Commerce</span></div>
+        <div class="proj-name">PhoneHub Nigeria</div>
+        <div class="proj-desc">A fully-featured online phone store with product listings, cart system, checkout, admin panel, and order tracking. Built entirely from scratch.</div>
+        <div class="proj-links">
+          <!-- ✏️ Replace # with your actual project URL -->
+          <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> View Project</a>
+          <a href="#" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+    <!-- PROJECT 2 -->
+    <div class="proj-card reveal delay-1">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0d2218,#0a3820)">
+        <span>🩺</span>
+        <div class="proj-img-overlay"><i class="fa fa-external-link-alt" style="color:#fff;font-size:1.5rem"></i></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">HTML/CSS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Healthcare</span></div>
+        <div class="proj-name">Personal Portfolio Website</div>
+        <div class="proj-desc">This very portfolio — a premium, fully responsive personal website showcasing my skills in nursing, web development, and entrepreneurship.</div>
+        <div class="proj-links">
+          <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> View Project</a>
+          <a href="#" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+    <!-- PROJECT 3 - PLACEHOLDER for future -->
+    <div class="proj-card reveal delay-2">
+      <div class="proj-img" style="background:linear-gradient(135deg,#1a1208,#2a1e08)">
+        <span>🚀</span>
+        <div class="proj-img-overlay"><i class="fa fa-external-link-alt" style="color:#fff;font-size:1.5rem"></i></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">Coming Soon</span></div>
+        <div class="proj-name">Next Project — Healthcare Tech</div>
+        <div class="proj-desc">Working on a healthcare technology solution to bridge the gap between clinical care and digital tools. Stay tuned for updates!</div>
+        <div class="proj-links">
+          <button class="btn btn-ghost btn-sm" disabled style="opacity:.5">In Progress</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--txt2);font-size:.83rem;margin-top:24px">
+    </em>
+  </p>
+</div>
+</section>
+
+<!-- ====== GALLERY ====== -->
+<section id="gallery" class="section section-alt">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:40px">
+    <span class="eyebrow">Gallery</span>
+    <h2>Moments & Memories</h2>
+    <p>Snapshots from my journey — healthcare, personal life, and everything in between.</p>
+  </div>
+  <div class="gallery-grid reveal" id="gallery-grid">
+    <!--
+      ✏️ HOW TO ADD PHOTOS:
+      Replace each gallery-placeholder div with:
+      <div class="gallery-item">
+        <img src="photo1.jpg" alt="Description"/>
+      </div>
+    -->
+    <div class="gallery-item">
+      <img src="profile image.jpg" alt="Description"/>
+      <div class="gallery-placeholder"><i class="fa fa-user-md"></i><span>Photo 1<br>(Medical scrubs)</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="bro musa.jpg" alt="Description"/>
+      <div class="gallery-placeholder"><i class="fa fa-user-graduate"></i><span>Photo 2<br>(Brother/Mentor)</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="me and bro.jpg" alt="Description"/>
+      <div class="gallery-placeholder"><i class="fa fa-users"></i><span>Photo 3<br>(Friend/Network)</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="footbal momets.jpg" alt="Descripton"/>
+      <div class="gallery-placeholder"><i class="fa fa-futbol"></i><span>Football moments</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="casual image.jpg" alt="Description"/>
+      <div class="gallery-placeholder"><i class="fa fa-laptop-code"></i><span>Working / Coding</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="family.jpg" alt="Description"/>
+      <div class="gallery-placeholder"><i class="fa fa-image"></i><span>Any photo</span></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:28px">
+    <p style="color:var(--txt2);font-size:.82rem;margin-bottom:14px"></p>
+  </div>
+</div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section id="contact" class="section">
+<div class="container">
+  <div class="sh center reveal" style="margin-bottom:48px">
+    <span class="eyebrow">Get In Touch</span>
+    <h2>Let's Work Together</h2>
+    <p>Whether you have a project, opportunity, or just want to connect — I'd love to hear from you.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info reveal-left">
+      <!-- ✏️ EDIT: Replace all contact details below with your real info -->
+      <div class="ci-item">
+        <div class="ci-ico teal"><i class="fa fa-envelope"></i></div>
+        <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:adavurukuabdulrazaq@gmail.com" id="contact-email">adavurukuabdulrazaq@gmail.com</a></div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-ico green"><i class="fab fa-whatsapp"></i></div>
+        <div><div class="ci-label">WhatsApp</div><div class="ci-val">
+          <!-- ✏️ Replace 234XXXXXXXXXX with your WhatsApp number -->
+          <a href="https://wa.me/2348030536069" target="_blank" id="whatsapp-link">+234 8030536069</a>
+        </div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-ico blue"><i class="fab fa-facebook-f"></i></div>
+        <div><div class="ci-label">Facebook</div><div class="ci-val">
+          <!-- ✏️ Replace with your Facebook profile URL -->
+          <a href="https://www.facebook.com/yourprofile" target="_blank" id="fb-link">facebook.com/yourprofile</a>
+        </div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-ico pink"><i class="fab fa-instagram"></i></div>
+        <div><div class="ci-label">Instagram</div><div class="ci-val">
+          <!-- ✏️ Replace with your Instagram handle -->
+          <a href="https://www.instagram.com/ismaeel_abdulrazaq" target="_blank" id="ig-link">ismaeel_abdulrazaq</a>
+        </div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-ico orange"><i class="fa fa-map-marker-alt"></i></div>
+        <div><div class="ci-label">Location</div><div class="ci-val">Abuja, Nigeria</div></div>
+      </div>
+      <div style="padding:0 4px">
+        <div class="ci-label" style="margin-bottom:10px">Follow Me</div>
+        <div class="social-row">
+          <a class="soc-btn soc-fb" href="https://www.facebook.com/yourprofile" target="_blank" id="soc-fb"><i class="fab fa-facebook-f"></i></a>
+          <a class="soc-btn soc-ig" href="https://www.instagram.com/ismaeel_abdulrazaq" target="_blank" id="soc-ig"><i class="fab fa-instagram"></i></a>
+          <a class="soc-btn soc-wa" href="https://wa.me/2348030536069" target="_blank" id="soc-wa"><i class="fab fa-whatsapp"></i></a>
+          <a class="soc-btn soc-li" href="https://www.linkedin.com/in/Ismaila Abdulrazaq" target="_blank" id="soc-li"><i class="fab fa-linkedin-in"></i></a>
+          <a class="soc-btn soc-gh" href="https://github.com/abdul-8901" target="_blank" id="soc-gh"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal-right">
+      <h3>Send Me a Message</h3>
+      <div class="cf-group"><label>Your Name</label><input type="text" id="cf-name" placeholder="John Doe"/></div>
+      <div class="cf-group"><label>Email Address</label><input type="email" id="cf-email" placeholder="john@email.com"/></div>
+      <div class="cf-group"><label>Subject</label>
+        <select id="cf-subject">
+          <option value="">Select a subject...</option>
+          <option>Job Opportunity</option>
+          <option>Web Development Project</option>
+          <option>Healthcare Collaboration</option>
+          <option>General Enquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="cf-group"><label>Message</label><textarea id="cf-msg" placeholder="Tell me about your project or enquiry..."></textarea></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="sendMsg()"><i class="fa fa-paper-plane"></i> Send Message</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div>
+      <div class="nav-logo" style="margin-bottom:12px;font-size:1.4rem">Ismaila<span style="color:var(--teal)">.</span></div>
+      <p class="footer-brand" style="color:var(--txt2);font-size:.85rem;line-height:1.75;margin-bottom:18px">Registered Nurse · Web Developer · Aspiring Tech Professional. Building at the intersection of healthcare and technology from Kogi State, Nigeria.</p>
+      <div class="social-row">
+        <a class="soc-btn soc-fb" href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="soc-btn soc-ig" href="https://www.instagram.com/ismaeel_abdulrazaq" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="soc-btn soc-wa" href="https://wa.me/2348030536069" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a class="soc-btn soc-gh" href="https://github.com/abdul-8901" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Contact</h4>
+      <a href="mailto:adavurukuabdulrazaq@gmal..com"><i class="fa fa-envelope" style="width:16px;color:var(--teal)"></i> Email Me</a>
+      <a href="https://wa.me/2348030536069" target="_blank"><i class="fab fa-whatsapp" style="width:16px;color:#34d399"></i> WhatsApp</a>
+      <a href="#" download><i class="fa fa-download" style="width:16px;color:var(--teal)"></i> Download CV</a>
+      <a href="#projects"><i class="fa fa-folder" style="width:16px;color:var(--teal)"></i> View Projects</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Ismaila Abdulrazaq. All rights reserved.</span>
+    <span class="made-with">Built with ❤️ — Nurse by training, Developer by passion</span>
+  </div>
+</div>
+</footer>
+
+<script>
+// ======= REVEAL ON SCROLL =======
+const revealAll = () => {
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight - 60) el.classList.add('in');
+  });
+};
+window.addEventListener('scroll', revealAll);
+revealAll();
+
+// ======= SKILL BARS =======
+const animateBars = () => {
+  document.querySelectorAll('.skill-fill').forEach(bar => {
+    const r = bar.getBoundingClientRect();
+    if (r.top < window.innerHeight - 40 && !bar.style.width.includes('%')) {
+      bar.style.width = bar.dataset.w + '%';
+    }
+  });
+};
+window.addEventListener('scroll', animateBars);
+animateBars();
+
+// ======= STICKY NAV =======
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('sticky', scrollY > 50);
+  // Highlight active nav link
+  const sections = ['about','skills','achievements','projects','gallery','contact'];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+    if (el && link) {
+      const r = el.getBoundingClientRect();
+      link.classList.toggle('on', r.top <= 100 && r.bottom > 100);
+    }
+  });
+});
+
+// ======= THEME =======
+function toggleTheme() {
+  const h = document.documentElement;
+  const isDk = h.getAttribute('data-theme') === 'dark';
+  h.setAttribute('data-theme', isDk ? 'light' : 'dark');
+  document.getElementById('theme-ico').className = isDk ? 'fa fa-moon' : 'fa fa-sun';
+}
+
+// ======= MENU =======
+function openMenu() { document.getElementById('mmenu').classList.add('open'); document.getElementById('mov').classList.add('open'); }
+function closeMenu() { document.getElementById('mmenu').classList.remove('open'); document.getElementById('mov').classList.remove('open'); }
+
+// ======= CONTACT FORM =======
+function sendMsg() {
+  const name = document.getElementById('cf-name').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const msg = document.getElementById('cf-msg').value.trim();
+  if (!name || !email || !msg) { showToast('Please fill in all required fields.'); return; }
+  // ✏️ To make this actually send emails, integrate EmailJS or Formspree.
+  // For now, it opens a WhatsApp message:
+  const waNum = document.getElementById('soc-wa').href.replace('https://wa.me/','');
+  const text = encodeURIComponent(`Hello Ismaila!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+  window.open(`https://wa.me/${waNum}?text=${text}`, '_blank');
+  showToast('Opening WhatsApp to send your message!');
+  document.getElementById('cf-name').value = '';
+  document.getElementById('cf-email').value = '';
+  document.getElementById('cf-msg').value = '';
+}
+
+// ======= TOAST =======
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// ======= TYPED HERO =======
+const typedWords = ['Registered Nurse', 'Web Developer', 'Crypto Trader', 'Entrepreneur', 'Lifelong Learner'];
+let wi = 0, ci = 0, deleting = false;
+const typedEl = document.createElement('span');
+typedEl.style.cssText = 'color:var(--teal);border-right:2px solid var(--teal);padding-right:3px';
+function doType() {
+  const word = typedWords[wi];
+  typedEl.textContent = deleting ? word.substring(0, ci--) : word.substring(0, ci++);
+  if (!deleting && ci === word.length + 1) { deleting = true; setTimeout(doType, 1800); return; }
+  if (deleting && ci < 0) { deleting = false; wi = (wi + 1) % typedWords.length; setTimeout(doType, 300); return; }
+  setTimeout(doType, deleting ? 60 : 110);
+}
+// Insert typed element into hero eyebrow after DOM loads
+window.addEventListener('load', () => {
+  const eyebrow = document.querySelector('#hero .eyebrow');
+  if (eyebrow) { eyebrow.textContent = ''; eyebrow.appendChild(typedEl); doType(); }
+});
+</script>
+</body>
+</html>

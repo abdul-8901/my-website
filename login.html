@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin: 0;  
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "poppings",Arial, Helvetica, sans-serif;
+        }
+        body{
+        background: #f5f7fa;
+        color: white;    
+        line-height: 1.6;
+        display: flex;
+         max-height: 100%;
+        }
+.container{
+   background: #0f172a;
+   border-radius: 10px;
+   align-items: center;
+   line-height: 1.4rem ;
+   margin: 30px auto;
+   max-width: 500px;
+   max-height: 700px;
+   padding: 20px;
+background: linear-gradient(rgba(10,20,40,0.75),rgba(10,20,40,0.75)),url(/background\ image\ 1.png);
+object-fit: contain;
+}
+.form-wrap .form-group label{
+   display: block;
+   color:white;
+   line-height: 1.6;
+   margin-bottom: 6px;
+   font-weight: 600;
+}
+.form-wrap .form-group input{
+   width: 10px;
+padding: 10px;
+border: white 1px solid;
+border-radius: 5px;
+font-size: 14px;
+}
+.form-wrap p{
+   text-align: center;
+   font-weight: 300;
+}
+.form-group{
+    line-height: 1.6;
+}
+h1{
+   text-align: center;
+   font-size: 30px;
+}
+.btn{
+   padding: 12px;
+width: 400px;
+background:#007bff ;
+color: #ffffff;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+}
+.btn:hover{
+    background: #0f6ad8;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="form-wrap">
+<h1 >sign in </h1><br>
+<p>please enter your details to login</p><br>
+<form>
+   <div class="form-group">
+    <label for="name">email</label>
+      <input style=" width:95%;" type="text"id="email"name="email"placeholder=" example@gmail.com">
+    </div><br>
+    <div class="form-group">
+<label for="password">password</label>
+<input  style=" width:95%;"type="password" name="password" id="password" placeholder=" enter password">
+</div><br>
+<div class="button">
+   <button type="submit" class="btn">login</button>
+   <p class="bottom-text"></p>
+</div>
+</form><br>
+<footer class="bottom-text">
+<p>don't have an account? &nbsp;<a href ="/form.html"input type="sign up" value ="sign up">register</a> </p> <br>
+<p>forgotten your password? &nbsp;<a href="/index-CSS/F.P.html/form _02.html"input type="forget password" value="forget password">click here</a></p>
+</footer>
+</div>
+    </div>
+</body>
+</html>

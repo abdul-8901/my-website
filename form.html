@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+<style>
+#container{
+   background-color: #0f172a;
+   border-radius: 10px;
+   align-items: center;
+   line-height: 1.4rem  ;
+   margin: 30px auto;
+   max-width: 400px;
+   padding: 20px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   height: 100vh; 
+background: linear-gradient(rgba(10,20,40,0.75),rgba(10,20,40,0.75)),url(/background\ image\ 1.png);
+display: flex;}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+body{
+   background-color:whitesmoke;
+   display: flex;
+   line-height: 1.6;
+}
+ .form-wrap{
+   color: #ffffff;
+ }
+.form-wrap .form-group label{
+   display: block;
+   color:white;
+   line-height: 1.6;
+   margin-bottom: 6px;
+   font-weight: 600;
+}
+.form-wrap .form-group input{
+   width: 1opx;
+padding: 10px;
+border: white 1px solid;
+border-radius: 5px;
+font-size: 14px;
+}
+h1{
+   text-align: center;
+   font-size: 30px;
+}
+p{
+   text-align: center;
+}
+.btn{
+   padding: 12px;
+width: 300px;
+background:#007bff ;
+color: #ffffff;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+}
+.btn:hover{
+   background: #0056b3;
+}
+</style>
+</head>
+<body>
+   <div id="container">
+      <div class="form-wrap">
+<h1 >sign up</h1>
+<form>
+   <div class="form-group">
+    <label for="name">Name</label>
+      <input style=" width:95%;" type="text"id="name"name="name"placeholder=" maro _xm">
+    </div><br>
+<div class="form-group">
+   <label style=" text-align-last:left;" for="Email">Email</label>
+   <input  style=" width:95%;"type="email"name="email"id="email"placeholder="enter an email">
+</div><br>
+<div class="form-group">
+<label for="password">password</label>
+<input  style=" width:95%;"type="password" name="password" id="password" placeholder=" enter password">
+</div><br>
+<div class="form-group">
+<label for="password"> confirm password</label>
+<input  style=" width:95%; "type="password" name="password" id="password" placeholder=" confirm password">
+</div><br>
+<div class="form-group">
+   <label for ="sex">Sex</label>
+   <select name="sex" id="sex">
+   <option value="male">Male</option>
+   <option value="Female">Female</option>
+   <otion value=" other">Other</otion>
+   </select>
+</div><br>
+<div class="form-group">
+   <label for="Membership">Membership</label>
+   <input type="radio"name="Membership"value="Regular" id="Membership" checked>Regular
+   <input type="radio"name="Membership"value="VIP"ID="Membership">VIP
+</div><br>
+<div class="button">
+   <button type="submit" class="btn">sign up</button>
+   <p class="bottom-text"></p>
+</div>
+</form>
+<footer class="bottom-text"><br>
+   <p>
+      already have an account? &nbsp;<a href="/login.html">login</a>
+   </p>
+</footer>
+</div>
+</body>
+</html>
